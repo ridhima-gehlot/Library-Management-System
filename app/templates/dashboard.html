@@ -1,0 +1,51 @@
+{% extends "base.html"%}
+{% block title %} Dashboard {% endblock%}
+<br>
+
+{% block content %}
+
+<header>
+    <nav class="navbar">
+    <div class="logo">
+        <div class="icon">📘</div>
+        <div>
+            <h2>Central Library</h2>
+            <p>Management System</p>
+        </div>
+    </div>
+    <a href="/logout" class="logout">Logout</a>
+</nav>
+</header>
+<br>
+
+<main>
+<section class="container">
+    <h1>Welcome back, Librarian!</h1>
+    <p class="subtitle">Choose a feature to manage your library</p>
+
+    <div class="cards">
+        <div class="card blue">
+            <div class="card-icon">📖</div>
+            <h3>Book Information</h3>
+            <p>Add, view, and manage your library's book collection</p>
+            <a href="/books">Go to Books →</a>
+        </div>
+
+        <div class="card green">
+            <div class="card-icon">👥</div>
+            <h3>Library Members</h3>
+            <p>Register members and manage their library accounts</p>
+            <a href="/members">Go to Members →</a>
+        </div>
+
+        <div class="card gold">
+            <div class="card-icon">📋</div>
+            <h3>Issue Status</h3>
+            <p>Track book issues, returns, and manage fines</p>
+            <a href="/issue-status">Go to Issues →</a>
+        </div>
+    </div>
+</section>
+</main>
+
+{% endblock%}

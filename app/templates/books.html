@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %} Books {% endblock%}
+{% block content %}
+
+<h1>Book Details</h1> <br>
+
+<section class="table">
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Book Name</th>
+        <th>Total Copies</th>
+    </tr>
+
+    {% for book in books %}
+    <tr>
+        <td> {{book.book_id}} </td>
+        <td> {{book.book_name}} </td>
+        <td> {{book.total_copies}} </td>
+    </tr>
+     {% endfor %}
+
+</table>
+</section>
+
+{% endblock%}

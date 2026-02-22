@@ -1,0 +1,51 @@
+{% extends "base.html"%}
+{% block title %} Members {% endblock %}
+{% block content %}
+
+<div class="library-page">
+
+    <!-- Header -->
+    <div class="library-header">
+        <div class="library-header-left">
+            <h1 class="library-title">Library Members</h1>
+            <p class="library-subtitle">Manage library memberships</p>
+        </div>
+
+        <div class="library-header-right">
+            <a class="add_member" href="/add_member">
+                <span class="btn-icon">+</span>
+                Add Member
+            </a>
+
+            <a href="/" class="btn-back">← Back</a>
+        </div>
+    </div>
+
+    <!-- Members Card -->
+    <div class="members-card">
+    <table> 
+        <!-- Table Header -->
+        <div class="members-table-header">
+            <tr>
+            <th class="col col-id">Member ID</th>
+            <th class="col col-name"> Member Name</th>
+            <th class="col col-department"> Department </th>
+            <th class="col col-semester"> Semester </th>
+            </tr>
+
+            {% for member in members %}
+            <tr>
+                <td> {{member.member_id }} </td>
+                <td> {{member.member_name }} </td>
+                <td> {{member.member_department }} </td>
+                <td> {{member.member_semester }} </td>
+            </tr>
+            {% endfor %}
+        </table>
+                
+
+        </div>
+
+</div>
+
+{% endblock %}

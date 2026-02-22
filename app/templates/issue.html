@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %} Issue Status {% endblock %}
+{% block content %}
+<div class="issue-page">
+
+    <!-- Header -->
+    <div class="issue-header">
+        <div class="issue-header-left">
+            <h1 class="issue-title">Issue Status</h1>
+            <p class="issue-subtitle">Track book issues and returns</p>
+        </div>
+
+        <div class="issue-header-right">
+            <button class="btn btn-issue-book">
+                <span class="btn-icon">+</span>
+                Issue Book
+            </button>
+
+            <a href="#" class="btn-back">← Back</a>
+        </div>
+    </div>
+
+    <!-- Card -->
+    <div class="issue-card">
+    <table>
+
+        <!-- Table Header -->
+        <div class="issue-table-header">
+            <tr>
+            <th class="col">Book ID</th>
+            <th class="col">Book Name</th>
+            <th class="col">Member ID</th>
+            <th class="col">Member Name</th>
+            <th class="col">Issued Date</th>
+            <th class="col">Return Date</th>
+            <th class="col">Returned</th>
+            <th class="col">Status</th>
+            <th class="col">Fine</th>
+            </tr>
+        </div>
+
+        
+        {% for issue in issues %}
+        <tr>
+            <td> {{issue["book_id"] }} </td>
+            <td> {{issue["book_name"] }} </td>
+            <td> {{issue["member_id"] }} </td>
+            <td> {{issue["member_name"] }} </td>
+            <td> {{issue["issued_date"] }} </td>
+            <td> {{issue["returning_date"] }} </td>
+            <td> {{issue["book_returned"] }} </td>
+            <td> {{issue["status"] }} </td>
+            <td> {{issue["fine"] }} </td>  
+        </tr>
+        {% endfor %}
+        
+
+    </div>
+
+</div>
+
+{% endblock %}
