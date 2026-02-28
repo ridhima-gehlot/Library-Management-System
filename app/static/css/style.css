@@ -34,6 +34,11 @@ body {
     text-align: center;
 }
 
+.topheading{
+    margin-top: 20px;
+    text-align: center;
+}
+
 label {
     display: block;
     text-align: left;
@@ -253,7 +258,7 @@ h1 {
     transition: 0.25s ease;
 }
 
-.add-member {
+ .btn .add-member {
     background: linear-gradient(135deg, #00c896, #00a67e);
     color: white;
     display: flex;
@@ -391,5 +396,4 @@ h1 {
 .issue-empty {
     padding: 70px 20px;
     text-align: center;
-    color: #8b9bb0;
-}
+    color: #8b9bb0;}

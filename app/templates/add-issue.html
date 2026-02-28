@@ -2,6 +2,69 @@
 {% block title %} Add Issued book {% endblock %}
 {% block content %}
 
+<div class="page-container">
 
+    <div class="form-card">
+        <h2 class="form-title topheading">Issue a Book</h2>
+
+        <form method="POST" class="issue-form">
+
+            <div class="form-group">
+                <label class="form-label">Book ID</label>
+                <input type="text" name="book_id" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Book Name</label>
+                <input type="text" name="book_name" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Member ID</label>
+                <input type="text" name="member_id" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Member Name</label>
+                <input type="text" name="member_name" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Issued Date</label>
+                <input type="date" name="issued_date" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Returning Date</label>
+                <input type="date" name="returning_date" class="form-input">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Book Returned</label>
+                <select name="book_returned" class="form-input">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Book Status</label>
+                <input type="text" name="book_status" class="form-input">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Member Fine</label>
+                <input type="number" name="member_fine" class="form-input" value="0">
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-primary">Add Issue</button>
+                <a href="{{ url_for('library.dashboard') }}" class="btn-secondary">Cancel</a>
+            </div>
+
+        </form>
+    </div>
+
+</div>
 
 {% endblock %}
