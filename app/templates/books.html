@@ -1,8 +1,21 @@
 {% extends "base.html" %}
 {% block title %} Books {% endblock%}
+{% block extra_css %} 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/books.css')}}">
+    {% endblock%}
 {% block content %}
 
 <h1 class="topheading">Book Details</h1> <br>
+
+<div class="library-header-right">
+            <button  class="/add-books" onclick = "location.href='{{url_for('library.add_book')}}'"> 
+                <span class="btn-icon">+</span>
+                Add Books
+                </button>
+
+            <a href="/" class="btn-back">← Back</a>
+        </div>
+    </div>
 
 <section class="table">
 <table>

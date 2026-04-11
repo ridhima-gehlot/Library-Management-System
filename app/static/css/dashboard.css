@@ -1,0 +1,157 @@
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 28px;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icon {
+    background: #7c5c2e;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.logo h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.logo p {
+    font-size: 11px;
+    color: #a0aec0;
+}
+
+.logout {
+    color: #a0aec0;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s;
+}
+
+.logout:hover {
+    color: #ffffff;
+}
+
+/* Main content */
+.container {
+    padding: 40px 28px;
+}
+
+.container h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #a0aec0;
+    margin-bottom: 32px;
+}
+
+/* Cards */
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    min-width: 260px;
+    border-radius: 14px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.card p {
+    font-size: 13px;
+    color: #a0aec0;
+}
+
+.card a {
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 8px;
+}
+
+.card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+
+/* Blue card */
+.card.blue {
+    background: rgba(30, 60, 114, 0.5);
+}
+.card.blue .card-icon {
+    background: rgba(66, 153, 225, 0.2);
+}
+.card.blue a {
+    color: #63b3ed;
+}
+
+/* Green card */
+.card.green {
+    background: rgba(20, 83, 75, 0.5);
+}
+.card.green .card-icon {
+    background: rgba(72, 187, 120, 0.2);
+}
+.card.green a {
+    color: #68d391;
+}
+
+/* Gold card */
+.card.gold {
+    background: rgba(92, 64, 20, 0.5);
+}
+.card.gold .card-icon {
+    background: rgba(236, 175, 42, 0.2);
+}
+.card.gold a {
+    color: #f5a623;
+}
+
+
+

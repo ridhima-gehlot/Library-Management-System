@@ -69,6 +69,25 @@ def issue_status():
 
     return render_template("issue.html", issues=data,)
 
+# to add new books
+@library_bp.route('/add_books', methods=["GET", "POST"])
+def add_book():
+     if request.method=="POST":
+          book_id=request.form.get('book_id')
+          book_name=request.form.get('book_name')
+          total_copies=request.form.get('total_copies')
+
+          new_books= books(
+               book_id=book_id,
+               book_name=book_name,
+               total_copies=total_copies
+          )
+          db.session.add(new_books)
+          db.session.commit()
+          flash("New member added", 'success')
+          return redirect(url_for('library.dashboard'))
+     return render_template('add-books.html')
+
 
 #to add members
 @library_bp.route('/add_member', methods=["GET", "POST"])

@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 {% block title %} Login {% endblock%}
+{% block extra_css %} 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css')}}">
+    {% endblock%}
+
 {% block content %}
 <div class="login-box">
     <h2 class=topheading> Librarian Login </h2>

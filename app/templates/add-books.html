@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %} Add Issued book {% endblock %}
+{% block extra_css %} 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add-books.css')}}">
+    {% endblock%}
+{% block content %}
+
+<div class="page-container">
+
+    <div class="form-card">
+        <h2 class="form-title topheading">Add a New Book </h2>
+
+        <form method="POST" class="issue-form">
+
+            <div class="form-group">
+                <label class="form-label">Book ID</label>
+                <input type="text" name="book_id" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Book Name</label>
+                <input type="text" name="book_name" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label"> Total Copies </label>
+                <input type="text" name="total_copies" class="form-input" required>
+            </div>
+
+            <div class="issue-header-right">
+            <button class="btn-add-book" onclick="location.href='{{url_for('library.add_book')}}'">
+                <span class="btn-icon">+</span>
+                Add New  Book
+            </button>
+
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}

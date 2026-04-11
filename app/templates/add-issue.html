@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 {% block title %} Add Issued book {% endblock %}
+{% block extra_css %} 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add-issue.css')}}">
+    {% endblock%}
 {% block content %}
 
 <div class="page-container">
@@ -41,10 +44,7 @@
 
             <div class="form-group">
                 <label class="form-label">Book Returned</label>
-                <select name="book_returned" class="form-input">
-                    <option value="No">No</option>
-                    <option value="Yes">Yes</option>
-                </select>
+               <input type="date" name="book_returned" class="form-input">
             </div>
 
             <div class="form-group">
