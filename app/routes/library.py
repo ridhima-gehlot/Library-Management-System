@@ -40,10 +40,16 @@ def issue_status():
 
     for issue in all_issues:
         fine=0
+        today=date.today()
+    #data is used to collect dictionary in this list to calculate fine
+    data=[ ]
+
+    for issue in all_issues:
+        fine=0
 
         #If book not returned yet
-        #if issue.book_returned==None:
-        days_passed=(today-issue.issued_date).days
+        #days_passed=(issue.book_returned - issue.issued_date).days
+        days_passed = ( (issue.book_returned or date.today()) - issue.issued_date).days
         if days_passed>15:
                 fine=days_passed-15
                 status="Not Returned"
@@ -52,23 +58,18 @@ def issue_status():
                 fine=0
                 status="Returned"
 
-                
 
-        data.append({
-            "book_id": issue.book_id,
-            "book_name": issue.book_name,
-            "member_id": issue.member_id,
-            "member_name": issue.member_name,
-            "issued_date": issue.issued_date,
-            "returning_date": issue.returning_date,
-            "book_returned": issue.book_returned,
-            "status": issue.book_status,
-            "fine":fine
-            
-        })
-
-    return render_template("issue.html", issues=data,)
-
+        data.append({ "book_id": issue.book_id,
+                             "book_name": issue.book_name,
+                            "member_id": issue.member_id,
+                            "member_name": issue.member_name,
+                            "issued_date": issue.issued_date,
+                            "returning_date": issue.returning_date,
+                            "book_returned": issue.book_returned,
+                            "status": issue.book_status,
+                            "fine":fine })
+    return render_template("issue.html", issues=data)
+    
 # to add new books
 @library_bp.route('/add_books', methods=["GET", "POST"])
 def add_book():
